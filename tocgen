@@ -4,8 +4,6 @@
 import sys
 import os
 from pathlib import Path
-USAGE = 'Usage : main.py [ABS_PARENT_DIR] file.md'
-
 PATH = Path(sys.argv[1])
 FILE = sys.argv[2]
 
