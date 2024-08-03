@@ -1,7 +1,21 @@
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
 
-# tocgen
-Generates a table of contents using a specified absolute directory as the root where child markdown files will be converted into a markdown list of links; These links will be added to the specified markdown file. 
+# Table of Contents
 
+- [Description](#description)
+- [Why did I make this ? ](#why-did-i-make-this-)
+- [Installation ](#installation)
+- [Usage ](#usage)
+- [Example](#example)
+
+<!-- TOC end -->
+
+
+<!-- TOC --><a name="tocgen"></a>
+# Description
+Tocgen is a simple python script that generates a table of contents using a specified absolute directory as the root where child markdown files will be converted into a markdown list of links. These links will be added to the specified markdown file. 
+
+<!-- TOC --><a name="why-did-i-make-this-"></a>
 # Why did I make this ? 
 
 Well , I was messing around with a jekyll template while converting my "config" repo to a website. This repo is just a giant repo of organized markdown files. So I wanted to turn this into a website with a unique template to showcase what i've been upto for the past 3 years.
@@ -10,6 +24,7 @@ Well , I was messing around with a jekyll template while converting my "config" 
 This is a simple python script that creates a markdown list with links to the markdown files in a directory. Think of this TOC as one that creates LINKS to other child files, rather than other sections on the page.
 
 
+<!-- TOC --><a name="installation"></a>
 # Installation 
 
 ```
@@ -19,6 +34,7 @@ sudo ln -s $HOME/tocgen/tocgen /usr/local/bin/
 ```
 
 
+<!-- TOC --><a name="usage"></a>
 # Usage 
 
 **Please note you must specify the absolute path for the markdown file and the directory.**
@@ -36,6 +52,7 @@ optional arguments:
 
 ```
 
+<!-- TOC --><a name="example"></a>
 # Example
 
 Let's say I have a directory which contains a bunch of markdown files. Using the directory structure below.
