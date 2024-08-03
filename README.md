@@ -48,7 +48,7 @@ optional arguments:
   --show-changes, -s    Show table of contents before writing to file
   --dir DIR, -d DIR     Specify absolute directory as root for Table of
                         Contents
-  --file FILE, -f FILE  File the TOC will be written to
+  --file FILE, -f FILE  Absolute path of Mardown file the TOC will be written to
 
 ```
 

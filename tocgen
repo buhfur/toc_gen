@@ -51,7 +51,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--show-changes","-s", help="Show table of contents before writing to file ", action="store_true")
 
 parser.add_argument("--dir", "-d", help="Specify absolute directory as root for Table of Contents", required=True,type=str)
-parser.add_argument("--file", "-f", help="File the TOC will be written to", required=True,action='store')
+parser.add_argument("--file", "-f", help="Absolute path of Markdown file the TOC will be written to", required=True,action='store')
 
 
 args = parser.parse_args()
