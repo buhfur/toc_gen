@@ -21,11 +21,17 @@ sudo ln -s $HOME/toc_gen/tocgen /usr/local/bin/
 
 # Usage 
 
-> tocgen [ABS_PARENT_DIR] file.md'
-> WARNING: THIS WILL APPEND YOUR FILE FOR "file.md" AND SAVE CHANGES
+**Please note you must specify the absolute path for the markdown file and the directory.**
 
 
-# TODO 
+```
+usage: tocgen [-h] [--show-changes] --dir DIR --file PATH-TO-FILE
 
-- [] Add command line arguments to perform a test before saving changes to the file  
-- [] 
+optional arguments:
+  -h, --help            show this help message and exit
+  --show-changes, -s    Show table of contents before writing to file
+  --dir DIR, -d DIR     Specify absolute directory as root for Table of
+                        Contents
+  --file FILE, -f FILE  File the TOC will be written to
+
+```
