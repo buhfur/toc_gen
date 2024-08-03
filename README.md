@@ -1,6 +1,6 @@
 
 # tocgen
-Generates a table of contents using a specified absolute directory as the root where child markdown files will be converted into a markdown list of links; To the files location appended by the name of the markdown file. 
+Generates a table of contents using a specified absolute directory as the root where child markdown files will be converted into a markdown list of links; These links will be added to the specified markdown file. 
 
 # Why did I make this ? 
 
@@ -14,7 +14,7 @@ This is a simple python script that creates a markdown list with links to the ma
 
 ```
 git clone https://github.com/buhfur/toc_gen $HOME
-sudo ln -s $HOME/toc_gen/tocgen /usr/local/bin/
+sudo ln -s $HOME/tocgen/tocgen /usr/local/bin/
 
 ```
 
@@ -34,4 +34,37 @@ optional arguments:
                         Contents
   --file FILE, -f FILE  File the TOC will be written to
 
+```
+
+# Example
+
+Let's say I have a directory which contains a bunch of markdown files. Using the directory structure below.
+
+```
+example/
+├── index.md
+└── parent
+    ├── file1.md
+    ├── file2.md
+    └── file3.md
+```
+
+Our goal here is to add a TOC with links to all files in `parent/` and put said table in `index.md`.
+
+Assuming this directory is stored in the users home dir. I woud run the following comand. 
+
+`tocgen -d /home/$USER/example/parent -f /home/$USER/example/index.md`
+
+Or if you just want to see what the table would look like , you can use the `-s` argument.
+
+`tocgen -s -d /home/$USER/example/parent -f /home/$USER/example/index.md`
+
+And the output (without the -s flag ) will append the table to the end of the markdown file.
+
+**Output**
+
+```
+1. [File1](parent/file1.md)
+2. [File2](parent/file2.md)
+3. [File3](parent/file3.md)
 ```
