@@ -27,19 +27,24 @@ def tocgen(FILE,DIR, show_changes=True):
     template_list = []
 
     for x in os.listdir(PATH):
-        if x.endswith('.md') and x != os.path.basename(FILE):
-            MD_PATH_TEMPLATE=f'{PATH.parts[-1]}/{x}'
-            stripped_ext = x[:-3]
-            final_str = stripped_ext[0].upper() + stripped_ext[1:]
-            count+=1
-            template = f'{count}. [{final_str}]({MD_PATH_TEMPLATE})'
-            template_list.append(template)
+        if x.endswith('.md') and x != os.path.basename(FILE): # Avoids adding the FILE to the TOC
+
+            # Check if FILE is in DIR , if so don't include the PWD in the final_str
+           if DIR == os.getcwd()+"/" :
+               MD_PATH_TEMPLATE=f'{x}'
+           else:
+               MD_PATH_TEMPLATE=f'{PATH.parts[-1]}/{x}'
+           stripped_ext = x[:-3]
+           final_str = stripped_ext[0].upper() + stripped_ext[1:]
+           count+=1
+           template = f'{count}. [{final_str}]({MD_PATH_TEMPLATE})'
+           template_list.append(template)
 
     if not show_changes:
         with open(FILE, 'a') as f : 
             for x in template_list:
                 f.write(''.join(x)+"\n")
-            
+
 
     # if -s argument is used
     if show_changes:
@@ -58,12 +63,12 @@ parser.add_argument("--file", "-f", help="relative or Absolute path of Markdown 
 
 args = parser.parse_args()
 
-   
+
 # use current working dir of file 
 if not args.show_changes:
     tocgen(args.file, args.dir,show_changes=False)
 else:
     tocgen(args.file, args.dir)
 
-    
+
 
