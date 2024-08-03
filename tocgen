@@ -25,13 +25,15 @@ def tocgen(FILE,DIR, show_changes=True):
 
     count = 0 # ID for TOC entries 
     template_list = []
+
     for x in os.listdir(PATH):
-        MD_PATH_TEMPLATE=f'{PATH.parts[-1]}/{x}'
-        stripped_ext = x[:-3]
-        final_str = stripped_ext[0].upper() + stripped_ext[1:]
-        count+=1
-        template = f'{count}. [{final_str}]({MD_PATH_TEMPLATE})'
-        template_list.append(template)
+        if x.endswith('.md') and x != FILE.strip('./'):
+            MD_PATH_TEMPLATE=f'{PATH.parts[-1]}/{x}'
+            stripped_ext = x[:-3]
+            final_str = stripped_ext[0].upper() + stripped_ext[1:]
+            count+=1
+            template = f'{count}. [{final_str}]({MD_PATH_TEMPLATE})'
+            template_list.append(template)
 
     if not show_changes:
         with open(FILE, 'a') as f : 
