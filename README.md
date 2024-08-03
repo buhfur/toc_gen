@@ -28,7 +28,7 @@ This is a simple python script that creates a markdown list with links to the ma
 # Installation 
 
 ```
-git clone https://github.com/buhfur/toc_gen $HOME/tocgen
+git clone https://github.com/buhfur/tocgen $HOME/tocgen
 sudo ln -s $HOME/tocgen/tocgen /usr/local/bin/
 
 ```
