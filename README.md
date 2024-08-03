@@ -37,7 +37,7 @@ sudo ln -s $HOME/tocgen/tocgen /usr/local/bin/
 <!-- TOC --><a name="usage"></a>
 # Usage 
 
-**Please note you must specify the absolute path for the markdown file and the directory.**
+**Please note you must specify the absolute path for the markdown file if it is not in your current working directory. The directory must always be an absolute path**
 
 
 ```
